@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>GTD Todo – Inbox</title>
+</head>
+<body>
+
+  <h1>📥 GTD Inbox</h1>
+
+  <input id="taskInput" type="text" placeholder="Vazifa yoz..." />
+  <button onclick="addTask()">Qo‘shish</button>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const taskText = input.value;
+
+      if (taskText === "") return;
+
+      const li = document.createElement("li");
+      li.textContent = taskText;
+
+      document.getElementById("taskList").appendChild(li);
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>
